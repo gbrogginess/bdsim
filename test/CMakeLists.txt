@@ -12,6 +12,11 @@ set_target_properties(BDSBeamlineIntegralTester PROPERTIES OUTPUT_NAME "BDSBeaml
 target_link_libraries(BDSBeamlineIntegralTester ${BDSIM_LIB_NAME} ${GMAD_LIB_NAME})
 add_test(NAME "tester-beamline-integral" COMMAND BDSBeamlineIntegralTester)
 
+add_executable(BDSCollimatorOutputTester BDSCollimatorOutputTester.cc)
+set_target_properties(BDSCollimatorOutputTester PROPERTIES OUTPUT_NAME "BDSCollimatorOutputTester" VERSION ${BDSIM_VERSION})
+target_link_libraries(BDSCollimatorOutputTester ${BDSIM_LIB_NAME})
+add_test(NAME "tester-collimator-output" COMMAND BDSCollimatorOutputTester)
+
 add_executable(BDSInterpolatorTester BDSInterpolatorTester.cc)
 set_target_properties(BDSInterpolatorTester PROPERTIES OUTPUT_NAME "BDSInterpolatorTester" VERSION ${BDSIM_VERSION})
 target_link_libraries(BDSInterpolatorTester ${BDSIM_LIB_NAME} ${GMAD_LIB_NAME})
